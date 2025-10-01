@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отзывы - Фото.ХМ</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="hr">
+                <li><a href="main.html">Главная</a></li>
+                <li><a href="gallery.html">Галерея</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+                <li><a href="#">Отзывы</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="reviews-section">
+        <h1>💬 Отзывы наших клиентов</h1>
+        <p>Мы ценим каждое мнение и постоянно работаем над улучшением качества наших услуг</p>
+
+        <!-- Статистика -->
+        <div id="reviewsStats">
+            <!-- Загружается через JavaScript -->
+        </div>
+
+        <!-- Форма добавления отзыва -->
+        <div class="review-form">
+            <h3>📝 Оставить отзыв</h3>
+            <form id="reviewForm">
+                <div class="form-group">
+                    <label for="reviewAuthor">Ваше имя (необязательно):</label>
+                    <input type="text" id="reviewAuthor" placeholder="Как к вам обращаться?">
+                </div>
+                
+                <div class="form-group">
+                    <label>Ваша оценка:</label>
+                    <div class="rating-stars">
+                        <input type="radio" id="star5" name="rating" value="5">
+                        <label for="star5">★</label>
+                        <input type="radio" id="star4" name="rating" value="4">
+                        <label for="star4">★</label>
+                        <input type="radio" id="star3" name="rating" value="3">
+                        <label for="star3">★</label>
+                        <input type="radio" id="star2" name="rating" value="2">
+                        <label for="star2">★</label>
+                        <input type="radio" id="star1" name="rating" value="1">
+                        <label for="star1">★</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="reviewText">Текст отзыва:</label>
+                    <textarea id="reviewText" rows="4" placeholder="Поделитесь вашими впечатлениями..." required></textarea>
+                </div>
+                
+                <button type="button" onclick="submitReview()" style="width: 100%;">
+                    📤 Отправить отзыв
+                </button>
+            </form>
+        </div>
+
+        <!-- Сортировка и список отзывов -->
+        <div class="reviews-header">
+            <h2>Последние отзывы</h2>
+            <div class="reviews-controls">
+                <button class="sort-btn active" onclick="changeSort('recent')">📅 Сначала новые</button>
+                <button class="sort-btn" onclick="changeSort('popular')">🔥 Популярные</button>
+            </div>
+        </div>
+
+        <div class="reviews-list" id="reviewsList">
+            <!-- Отзывы загружаются через JavaScript -->
+        </div>
+    </div>
+
+    <footer>
+        <div class="leg">
+            <hr>
+            <p>Нашли ошибку на сайте? Сообщите нам!</p>
+            <p>+7(908)881-76-80</p>
+            <p>denis_sirotkin_04@mail.ru</p>
+            <p>Сироткин Денис Александрович "Мафиозник"</p>
+        </div>
+    </footer>
+
+    <script>
+        function changeSort(sortType) {
+            // Обновляем активную кнопку
+            document.querySelectorAll('.sort-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Загружаем отзывы с новой сортировкой
+            loadReviews(sortType);
+        }
+    </script>
+</body>
+</html>

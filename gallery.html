@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея - Фото.ХМ</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="main.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="hr">
+                <li><a href="main.html">Главная</a></li>
+                <li><a href="contact.html">О нас</a></li>
+                <li><a href="#">Галерея</a></li>
+                <li><a href="reviews.html">Отзывы</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="gallery-container">
+        <h1>🎨 Наша Галерея</h1>
+        <p>Лучшие моменты, запечатленные в Ханты-Мансийске</p>
+
+        <!-- Упрощенная форма загрузки -->
+        <div class="upload-form">
+            <h3>📤 Добавить фото</h3>
+            <input type="file" id="fileInput" accept="image/*">
+            <button onclick="uploadImage()">Загрузить изображение</button>
+            <div id="uploadStatus"></div>
+        </div>
+
+        <hr>
+
+        <!-- Галерея изображений -->
+        <div class="photo" id="gallery">
+            <p>Загрузка изображений...</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="leg">
+            <hr>
+            <p>Нашли ошибку на сайте? Сообщите нам!</p>
+            <p>+7(908)881-76-80</p>
+            <p>denis_sirotkin_04@mail.ru</p>
+            <p>Сироткин Денис Александрович "Мафиозник"</p>
+        </div>
+    </footer>
+</body>
+</html>

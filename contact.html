@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - Фото.ХМ</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="script.js"></script>
+</head>
+
+<body onload="initContactPage()">
+    <header>
+        <nav>
+            <ul class="hr">
+                <li><a href="main.html">Главная</a></li>
+                <li><a href="#">О нас</a></li>
+                <li><a href="gallery.html">Галерея</a></li>
+                <li><a href="reviews.html">Отзывы</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="FeedBack">
+        <h2>📞 Связаться с нами</h2>
+        <p>Для сотрудничества или заказа фотосессии пишите нам в телеграмм!</p>
+        
+        <div class="contact-card">
+            <img src="фото/Tg.png" alt="Telegram" class="center">
+            <h4>💬 Наш Telegram</h4>
+            <p>Быстрое общение и консультация</p>
+        </div>
+
+        <div class="contact-card">
+            <h4>🏢 Наш адрес</h4>
+            <p>Менделеева 3</p>
+            <p>Или приходите бронировать мастера на студию!</p>
+            <p>Мы ждем Вас!</p>
+        </div>
+
+        <div class="contact-card">
+            <h4>📱 Телефон</h4>
+            <p>+7(908)881-76-80</p>
+            <p>+7(993)576-36-98</p>
+        </div>
+    </div>
+
+    <div class="BackFeed">
+        <div class="contact-card">
+            <h4>🌐 Мы Online</h4>
+            <p><a href="https://eluniver.ugrasu.ru/mod/assign/view.php?id=95147">Наш сайт Университета</a></p>
+            <p><a href="https://e.mail.ru/compose/">Электронная почта</a></p>
+        </div>
+
+        <div class="contact-card">
+            <h4>✉️ Отправить сообщение</h4>
+            <form id="contactForm">
+                <p>Полное имя</p>
+                <input type="text" placeholder="Ваше имя" id="name">
+                <p>Email</p>
+                <input type="email" placeholder="your@email.com" id="email">
+                <p>Сообщение</p>
+                <textarea placeholder="Ваше сообщение..." id="message"></textarea>
+                <button type="button" onclick="submitContactForm()">Отправить сообщение</button>
+            </form>
+        </div>
+
+        <div class="contact-card">
+            <p><a href="https://yandex.ru/maps/-/CDHBeT~7">📍 Наш адрес на карте</a></p>
+        </div>
+    </div>
+
+    <div class="contact-card">
+        <h2>📢 Еще больше наших работ можете увидеть в нашем телеграм канале:</h2>
+        <h2>🌈 РАЗНОЦВЕТНЫЙ ХМ</h2>
+    </div>
+
+    <footer>
+        <div class="leg">
+            <hr>
+            <p>Нашли ошибку на сайте? Сообщите нам!</p>
+            <p>+7(908)881-76-80</p>
+            <p>denis_sirotkin_04@mail.ru</p>
+            <p>Сироткин Денис Александрович "Мафиозник"</p>
+        </div>
+    </footer>
+
+    <script>
+        // Локальные функции для страницы контактов
+        function submitContactForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            if (!name || !email || !message) {
+                alert('Пожалуйста, заполните все поля');
+                return;
+            }
+            
+            alert('Сообщение отправлено! (В реальном проекте здесь будет отправка на сервер)');
+            document.getElementById('contactForm').reset();
+        }
+    </script>
+</body>
+</html>
